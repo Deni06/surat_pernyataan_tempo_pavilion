@@ -1,0 +1,4 @@
+<?php
+echo "hello world";	
+?>
+<a href="<?=siteurl('welcome')?>">direct</a>

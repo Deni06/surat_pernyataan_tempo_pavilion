@@ -1,0 +1,102 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Order extends CI_Controller {
+	
+	public function __construct()
+	{
+		parent::__construct();
+		
+		if(!$this->session->userdata('username'))
+		{
+			redirect('login');
+		}
+		$this->load->model('model_settings');
+		$this->load->model('model_orders');
+		$this->load->model('model_users');
+	}
+	
+	public function index()
+	{
+		
+		$is_processed = $this->model_orders->process();
+		if($is_processed)
+		{
+			$this->cart->destroy();
+			redirect('order/success');
+		}else{
+				$this->session->set_flashdata('error','Failed To Processed Your Order ! , please try again');
+				redirect('home/cart');
+			
+			 }
+	}
+
+	public function success()
+	{
+		$data['get_sitename'] = $this->model_settings->sitename_settings();
+		$data['get_footer'] = $this->model_settings->footer_settings();	
+	
+		$this->load->view('order_success',$data);
+			
+	}
+	public function confirmation()
+	{
+		if(!$this->session->userdata('username'))
+		{
+			redirect('login');
+		}
+		$data['user']=$this->model_users->getmembers();
+		$this->load->view('order_confirmation',$data);
+
+	}
+
+	public function process()
+	{
+		if($this->input->post('type_address')==1)
+		{
+			$cust_name=$this->input->post('cust_name');
+			$cust_address=$this->input->post('address1').",".$this->input->post('address2').",".$this->input->post('city').",".$this->input->post('zip');
+			$cust_phone = $this->input->post('phone');
+			$cust_notes=$this->input->post('notes');
+			$total=$this->input->post('total');
+			$email=$this->input->post('email');
+
+			$is_processed = $this->model_orders->process_order($cust_name,$cust_address,$cust_phone,$cust_notes,$total,$email);
+		}else{
+			$cust_name=$this->input->post('cust_name');
+			$cust_address=$this->input->post('address1').",".$this->input->post('address2').",".$this->input->post('city').",".$this->input->post('zip');
+			$cust_phone = $this->input->post('phone');
+			$cust_notes=$this->input->post('notes');
+			$total=$this->input->post('total');
+			$email=$this->input->post('email');
+
+			$is_processed = $this->model_orders->process_order($cust_name,$cust_address,$cust_phone,$cust_notes,$total,$email);
+
+		}
+
+		if($is_processed)
+		{
+			$this->cart->destroy();
+			redirect('order/success');
+		}else{
+			$this->session->set_flashdata('error','Failed To Processed Your Order ! , please try again');
+			redirect('home/cart');
+
+		}
+	}
+
+
+	public function remove_cart($rowid,$send)
+	{
+		$data = array( 'rowid' => $rowid,
+			'qty' =>0
+		);
+		$this->cart->update($data);
+		if ($send == 'del')
+		{
+			redirect('order/confirmation/');
+		}else{
+			redirect(base_url());
+		}
+	}
+}//end  class

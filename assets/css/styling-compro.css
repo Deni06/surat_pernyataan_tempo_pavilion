@@ -1,0 +1,203 @@
+@charset "UTF-8";
+.navbar-c > li > a {
+	font-weight: 400 !important; 
+}
+
+.header-bg {
+	background-size: cover !important;
+    background-position: center !important;
+    min-height: 70vh !important;
+}
+
+.header-login {
+	background-size: cover !important;
+    background-position: center !important;
+    min-height: 92vh !important;
+}
+
+.transparent-btn {
+	background-color: transparent !important;
+    color: #fff !important;
+    border: 1px solid #eee !important;
+    padding: 10px 20px !important;
+    webkit-box-shadow:none !important;
+    box-shadow: none !important; 
+	border-radius: 5px !important;
+}
+
+.transparent-btn:hover {
+	background-color: #fff !important;
+    color: #565656 !important;
+    border: 1px solid #383838 !important;
+    padding: 10px 20px !important;
+    webkit-box-shadow:none !important;
+    box-shadow: none !important;
+	border-radius: 5px !important;
+}
+
+.white-btn {
+	background-color: #fff !important;
+    color: #565656 !important;
+    border: 1px solid #383838 !important;
+    padding: 10px 20px !important;
+    webkit-box-shadow:none !important;
+    box-shadow: none !important; 
+	border-radius: 5px !important;
+}
+
+.white-btn:hover {
+	background-color: #eee !important;
+    color: #565656 !important;
+    border: 1px solid #383838 !important;
+    padding: 10px 20px !important;
+    webkit-box-shadow:none !important;
+    box-shadow: none !important; 
+	border-radius: 5px !important;
+}
+
+.grey-btn {
+	background-color: #383838 !important;
+    color: #fff !important;
+    border: 1px solid #383838 !important;
+    padding: 10px 20px !important;
+    webkit-box-shadow:none !important;
+    box-shadow: none !important; 
+	border-radius: 5px !important;
+}
+
+.grey-btn:hover {
+	background-color: #282828 !important;
+    color: #fff !important;
+    border: 1px solid #383838 !important;
+    padding: 10px 20px !important;
+    webkit-box-shadow:none !important;
+    box-shadow: none !important; 
+	border-radius: 5px !important;
+}
+
+.transparent-btn-2 {
+	background-color: transparent !important;
+    color: #fff !important;
+    border: 1px solid #eee !important;
+    padding: 0px 20px !important;
+	border-radius: 5px !important;
+}
+
+.transparent-btn-2:hover {
+	background-color: #fff !important;
+    color: #565656 !important;
+    border: 1px solid #383838 !important;
+    padding: 0px 20px !important;
+	border-radius: 5px !important;
+}
+
+.title-text {
+	color: #383838 !important;
+}
+
+.title-text-greyn > span {
+	font-weight: 800 !important; 
+	color: #576A72 !important;
+}
+
+
+.myparagraph {
+	text-align: justify !important;
+}
+
+.myparagraph-right {
+	text-align: right !important;
+}
+
+.title-text > span {
+	font-weight: 800 !important; 
+	color: #383838 !important;
+}
+
+.member-title{
+	font-weight: 100 !important;
+	color: #383838 !important;
+}
+
+.contact-title{
+	font-weight: 100 !important;
+	color: #fff !important;
+	margin-bottom: 0px !important
+}
+
+.copyright-p {
+	color: #fff !important;
+	font-weight: 300 !important;
+}
+
+.contact-text-white{
+	color: #fff !important;
+	text-decoration: underline !important;
+	font-weight: 200 !important;
+}
+
+.contact-text-address{
+	color: #fff !important;
+	font-weight: 200 !important;
+}
+
+.container-zero{
+	margin: 0px !important;
+	padding: 0px !important;
+}
+
+.login-height{
+    min-height: 92vh !important;
+}
+
+.title-login{
+	color: #383838 !important;
+	font-weight: 300 !important;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #383838;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.input-label{
+	margin: 0px !important;
+	padding: 0px !important;
+	padding-bottom: 5px !important;
+	text-align: left !important;
+	color: #383838 !important;
+}
+
+.input-padding-10{
+	padding: 10px !important;
+	text-align: left !important;
+	width: 80% !important;
+	border-radius: 5px !important;
+}
+
+.paragraph-login{
+	margin: 0px !important;
+	padding: 0px !important;
+	text-align: left !important;
+	color: #383838 !important;
+}
+
+.paragraph-login > a{
+	text-decoration: underline !important;
+}
+
+.move-to-top{
+	-webkit-transition: 0.3s ease-out;
+    transition: 0.3s ease-out;
+    color: #fff !important;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.33em;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 1.5;
+    text-decoration: none;
+}

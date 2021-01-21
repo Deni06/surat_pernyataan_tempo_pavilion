@@ -1,0 +1,596 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {    
+    background-image: url(../img/backgrounds/gereja.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+body {
+    font-family: montserrat;
+    background: transparent;
+}
+
+/*form styles*/
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+}
+
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    /* width: 80%; */
+    width: 100%;
+    /* margin: 0 10%; */
+    margin: 0 0% 0 0%;
+
+    /*stacking fieldsets above each other*/
+    position: relative;
+}
+
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+    display: none;
+}
+
+/*inputs*/
+#msform input, #msform textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 14px;
+}
+
+#msform input:focus, #msform textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #606060;
+    outline-width: 0;
+    transition: All 0.5s ease-in;
+    -webkit-transition: All 0.5s ease-in;
+    -moz-transition: All 0.5s ease-in;
+    -o-transition: All 0.5s ease-in;
+}
+
+/*buttons*/
+#msform .action-button {
+    width: 100px;
+    background: #606060;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 5% 5px;
+}
+
+#msform .action-button:hover, #msform .action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #606060;
+}
+
+#msform .action-button-previous {
+    width: 100px;
+    background: #C5C5F1;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+#msform .action-button-previous:hover, #msform .action-button-previous:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #C5C5F1;
+}
+
+
+#msformleft {
+    text-align: left;
+    position: relative;
+    margin-top: 30px;
+}
+
+#msformleft fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    /* width: 80%; */
+    width: 100%;
+    /* margin: 0 10%; */
+    margin: 0 0% 0 0.7%;
+
+    /*stacking fieldsets above each other*/
+    position: relative;
+}
+
+/*Hide all except first fieldset*/
+#msformleft fieldset:not(:first-of-type) {
+    display: none;
+}
+
+/*inputs*/
+#msformleft input, #msformleft textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 14px;
+}
+
+#msformleft input:focus, #msformleft textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #606060;
+    outline-width: 0;
+    transition: All 0.5s ease-in;
+    -webkit-transition: All 0.5s ease-in;
+    -moz-transition: All 0.5s ease-in;
+    -o-transition: All 0.5s ease-in;
+}
+
+/*buttons*/
+#msformleft .action-button {
+    width: 100px;
+    background: #606060;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 5% 5px;
+}
+
+#msformleft .action-button:hover, #msformleft .action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #606060;
+}
+
+#msformleft .action-button-previous {
+    width: 100px;
+    background: #C5C5F1;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+#msformleft .action-button-previous:hover, #msformleft .action-button-previous:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #C5C5F1;
+}
+/*headings*/
+.fs-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #2C3E50;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.fs-subtitle {
+    font-weight: bold;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/*progressbar*/
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    /*CSS counters to number the steps*/
+    counter-reset: step;
+}
+
+#progressbar li {
+    list-style-type: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 9px;
+    width: 50%;
+    float: left;
+    position: relative;
+    letter-spacing: 1px;
+    text-align: center !important;
+}
+
+#progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 24px;
+    height: 24px;
+    line-height: 26px;
+    display: block;
+    font-size: 12px;
+    color: #333;
+    background: white;
+    border-radius: 25px;
+    margin: 0 auto 10px auto;
+}
+
+/*progressbar connectors*/
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: -50%;
+    top: 9px;
+    z-index: -1; /*put it behind the numbers*/
+}
+
+#progressbar li:first-child:after {
+    /*connector not needed before the first step*/
+    content: none;
+}
+
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before, #progressbar li.active:after {
+    background: gray;
+    color: white;
+}
+
+
+/* Not relevant to this form */
+.dme_link {
+    margin-top: 30px;
+    text-align: center;
+}
+.dme_link a {
+    background: #FFF;
+    font-weight: bold;
+    color: gray;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 5px 25px;
+    font-size: 12px;
+}
+
+.dme_link a:hover, .dme_link a:focus {
+    background: #C5C5F1;
+    text-decoration: none;
+}
+
+.file-upload {
+    background-color: #ffffff;
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .file-upload-btn {
+    width: 100%;
+    margin: 0;
+    color: #fff;
+    background: #1FB264;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    border-bottom: 4px solid #15824B;
+    transition: all .2s ease;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  
+  .file-upload-btn:hover {
+    background: #1AA059;
+    color: #ffffff;
+    transition: all .2s ease;
+    cursor: pointer;
+  }
+  
+  .file-upload-btn:active {
+    border: 0;
+    transition: all .2s ease;
+  }
+  
+  .file-upload-content {
+    display: none;
+    text-align: center;
+  }
+  
+  .file-upload-input {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .image-upload-wrap {
+    margin-top: 20px;
+    border: 4px dashed black;
+    position: relative;
+  }
+  
+  .image-dropping,
+  .image-upload-wrap:hover {
+    background-color: rgb(250, 250, 250);
+    border: 4px dashed #ffffff;
+  }
+  
+  .image-title-wrap {
+    padding: 0 15px 15px 15px;
+    color: #222;
+  }
+  
+  .drag-text {
+    text-align: center;
+  }
+  
+  .drag-text h3 {
+    font-weight: 100;
+    text-transform: uppercase;
+    color: rgb(15, 20, 18);
+    padding: 60px 0;
+  }
+  
+  .file-upload-image {
+    max-height: 200px;
+    max-width: 200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .remove-image {
+    width: 200px;
+    margin: 0;
+    color: #fff;
+    background: #cd4535;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    border-bottom: 4px solid #b02818;
+    transition: all .2s ease;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  
+  .remove-image:hover {
+    background: #c13b2a;
+    color: #ffffff;
+    transition: all .2s ease;
+    cursor: pointer;
+  }
+  
+  .remove-image:active {
+    border: 0;
+    transition: all .2s ease;
+  }
+
+  .radio {
+    margin: 16px 0;
+    display: block;
+    cursor: pointer;
+  }
+  .radio input {
+    display: none;
+  }
+  .radio input + span {
+    line-height: 22px;
+    height: 22px;
+    padding-left: 22px;
+    display: block;
+    position: relative;
+  }
+  .radio input + span:not(:empty) {
+    padding-left: 30px;
+  }
+  .radio input + span:before, .radio input + span:after {
+    content: '';
+    width: 22px;
+    height: 22px;
+    display: block;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    position: absolute;
+  }
+  .radio input + span:before {
+    background: #d1d7e3;
+    transition: background 0.2s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2);
+  }
+  .radio input + span:after {
+    background: #fff;
+    transform: scale(0.78);
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4);
+  }
+  .radio input:checked + span:before {
+    transform: scale(1.04);
+    background: #5d9bfb;
+  }
+  .radio input:checked + span:after {
+    transform: scale(0.4);
+    transition: transform 0.3s ease;
+  }
+  .radio:hover input + span:before {
+    transform: scale(0.92);
+  }
+  .radio:hover input + span:after {
+    transform: scale(0.74);
+  }
+  .radio:hover input:checked + span:after {
+    transform: scale(0.4);
+  }
+  section {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  section > div {
+    flex: 1;
+    padding: 0.5rem;
+  }
+  .choose {
+    display: none;
+  }
+  .choose:not(:disabled) ~ label {
+    cursor: pointer;
+  }
+  .choose:disabled ~ label {
+    color: #bcc2bf;
+    border-color: #bcc2bf;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+  .choose-label {
+    height: 100%;
+    display: block;
+    background: white;
+    border: 2px solid gray;
+    border-radius: 20px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    box-shadow: 0px 3px 10px -2px rgba(161, 170, 166, 0.5);
+    position: relative;
+  }
+  .choose:checked + label {
+    background: gray;
+    color: white;
+    box-shadow: 0px 0px 20px rgba(208, 209, 208, 0.75);
+  }
+  .choose:checked + label::after {
+    color: #3d3f43;
+    font-family: FontAwesome;
+    border: 2px solid rgb(198, 198, 218);
+    content: "\f00c";
+    font-size: 24px;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.25);
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 767px) {    
+    body {
+      font-size: 10px;
+    }
+    #image-header a img{
+      /* max-width: 500px !important; */            
+      max-height: 60px !important;
+      margin-left: 0 !important;  
+      margin-bottom: 0 !important;    
+    }
+    #msform{
+        /* max-width: 500px !important; */                    
+        margin-top: 10px;                
+      }
+      #msform fieldset{
+        /* max-width: 500px !important; */                    
+        padding: 5px 20px;                
+      }
+      hr{
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      #progressbar {
+        margin-bottom: 20px;
+      }  
+    #progressbar li {
+      font-size: 8px;
+    }  
+    .fs-title {
+      font-size: 14px;
+    }
+    .fs-subtitle {
+      font-size: 12px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+    #msform input{
+      /* max-width: 500px !important; */                    
+      font-size: 10px;
+      padding: 8px;
+    }
+
+    #msform .action-button-previous, #msform .action-button {
+      padding: 8px;
+    }
+
+    .radio input + span:before, .radio input + span:after {
+      content: '';
+      width: 17px;
+      height: 17px;
+      display: block;
+      border-radius: 50%;
+      left: 0;
+      top: 0;
+      position: absolute;
+    }
+    .radio input + span {
+      line-height: 18px;
+      height: 18px;      
+      display: block;
+      position: relative;
+    }
+    .radio input + span:not(:empty) {
+      padding-left: 22px;
+    }
+    .radio {      
+      margin: 0;
+    }
+    #subtitle22, #subtitle21  {      
+      margin-bottom: 10px;
+    }
+    #metode1  {      
+      height: 42px;
+    }
+  }      
+  
+  @media screen and (min-width: 360px) and (max-width: 410px) {        
+    #metode1  {      
+      height: 40px;
+    }
+  } 
+
+  @media screen and (min-width: 411px) and (max-width: 767px) {        
+    #metode1  {      
+      height: 18px;
+    }
+  }  
